@@ -6,7 +6,7 @@
 #    By: lcutjack <lcutjack@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/24 16:27:08 by lcutjack          #+#    #+#              #
-#    Updated: 2019/02/12 17:38:42 by lcutjack         ###   ########.fr        #
+#    Updated: 2019/02/17 14:24:24 by lcutjack         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,9 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	  ft_lstmap.c ft_lstadd_into.c ft_lstsize.c ft_replace.c ft_rejoin.c \
-	  ft_lstcpy.c ft_del.c ft_itoa_base.c ft_itoa_base_pos.c ft_str_tup.c
-INC = libft.h
+	  ft_lstcpy.c ft_del.c ft_itoa_base.c ft_itoa_base_pos.c ft_str_tup.c \
+	  get_next_line.c
+INC = libft.h get_next_line.h
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
