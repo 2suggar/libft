@@ -6,7 +6,7 @@
 #    By: lcutjack <lcutjack@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/24 16:27:08 by lcutjack          #+#    #+#              #
-#    Updated: 2019/02/17 14:24:24 by lcutjack         ###   ########.fr        #
+#    Updated: 2019/03/12 18:24:06 by lcutjack         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,19 +25,22 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	  ft_lstmap.c ft_lstadd_into.c ft_lstsize.c ft_replace.c ft_rejoin.c \
 	  ft_lstcpy.c ft_del.c ft_itoa_base.c ft_itoa_base_pos.c ft_str_tup.c \
-	  get_next_line.c
-INC = libft.h get_next_line.h
+	  get_next_line.c ft_is_ok.c
+SRCPF = ft_basic.c ft_printf.c ft_t_csp.c ft_t_di.c ft_t_f.c ft_t_oux.c \
+	what_type.c
+INC = libft.h get_next_line.h ft_printf.h
 OBJ = $(SRC:.c=.o)
+OBJPF = $(SRCPF:.c=.o)
 
-$(NAME): $(OBJ)
-	gcc $(FLAGS) -c $(SRC) -I$(INC)
-	@ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(OBJPF)
+	@gcc $(FLAGS) -c $(SRC) $(SRCPRINTF) -I $(INC)
+	@ar rc $(NAME) $(OBJ) $(OBJPF)
 	@ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	@/bin/rm -f $(OBJ)
+	@/bin/rm -f *.o
 
 fclean: clean
 	@/bin/rm -f $(NAME)

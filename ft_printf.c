@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcutjack <lcutjack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 20:25:00 by lcutjack          #+#    #+#             */
-/*   Updated: 2019/03/12 13:01:49 by lcutjack         ###   ########.fr       */
+/*   Created: 2018/12/21 19:53:22 by lcutjack          #+#    #+#             */
+/*   Updated: 2019/02/16 16:15:13 by lcutjack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 10
+#include "ft_printf.h"
 
-# include "libft.h"
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <fcntl.h>
+int	ft_printf(const char *format, ...)
+{
+	int		size;
+	char	*f;
+	va_list	ap;
 
-int	get_next_line(const int fd, char **line);
-
-#endif
+	size = 0;
+	f = (char*)format;
+	va_start(ap, format);
+	while (*f)
+	{
+		if (*f == '%' && ++f)
+			size += what_type(&f, &ap);
+		else if (++size)
+			ft_putchar((char)*(f++));
+	}
+	va_end(ap);
+	format = f;
+	return ((int)size);
+}

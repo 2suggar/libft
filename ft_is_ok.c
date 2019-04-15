@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_is_ok.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcutjack <lcutjack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 20:25:00 by lcutjack          #+#    #+#             */
-/*   Updated: 2019/03/12 13:01:49 by lcutjack         ###   ########.fr       */
+/*   Created: 2019/02/20 15:48:25 by lcutjack          #+#    #+#             */
+/*   Updated: 2019/03/19 15:53:14 by lcutjack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 10
+#include "libft.h"
 
-# include "libft.h"
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <fcntl.h>
-
-int	get_next_line(const int fd, char **line);
-
-#endif
+int	ft_is_ok(char *s, int (*f)(int))
+{
+	while (*s && f(*s))
+		++s;
+	return (*s ? 0 : 1);
+}

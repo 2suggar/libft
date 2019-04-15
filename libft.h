@@ -6,7 +6,7 @@
 /*   By: lcutjack <lcutjack@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 11:36:42 by lcutjack          #+#    #+#             */
-/*   Updated: 2019/02/12 17:39:18 by lcutjack         ###   ########.fr       */
+/*   Updated: 2019/02/22 17:46:15 by lcutjack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include "get_next_line.h"
 
 typedef struct		s_list{
 	void			*content;
@@ -48,6 +49,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_is_ok(char *s, int (*f)(int));
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				ft_str_tup(char *b);
