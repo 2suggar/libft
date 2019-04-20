@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcutjack <lcutjack@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcutjack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 12:49:20 by lcutjack          #+#    #+#             */
-/*   Updated: 2019/01/30 13:02:14 by lcutjack         ###   ########.fr       */
+/*   Created: 2018/11/26 14:18:30 by lcutjack          #+#    #+#             */
+/*   Updated: 2019/04/20 16:32:10 by lcutjack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memalloc(size_t size)
 {
-	size_t i;
+	unsigned char	*new;
 
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	if (s[i] || c == 0)
-		return ((char *)(s + i));
-	else
+	new = (unsigned char*)malloc(size * sizeof(unsigned char));
+	if (!new)
 		return (NULL);
+	while (size-- > 0)
+		new[size] = 0;
+	return (new);
 }

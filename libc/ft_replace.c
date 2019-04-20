@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_replace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcutjack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/10 16:40:43 by lcutjack          #+#    #+#             */
-/*   Updated: 2019/02/10 16:41:08 by lcutjack         ###   ########.fr       */
+/*   Created: 2018/12/20 20:53:47 by lcutjack          #+#    #+#             */
+/*   Updated: 2018/12/21 11:54:19 by lcutjack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_replace(char **s, char ts, char on)
 {
-	size_t	i;
-
-	i = 0;
-	while (src[i] && i < len)
+	while (**s)
 	{
-		dst[i] = src[i];
-		++i;
+		if (**s == ts)
+			**s = on;
+		(*s)++;
 	}
-	while (i < len)
-		dst[i++] = '\0';
-	return (dst);
 }

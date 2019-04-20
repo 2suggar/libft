@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replace.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcutjack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 20:53:47 by lcutjack          #+#    #+#             */
-/*   Updated: 2018/12/21 11:54:19 by lcutjack         ###   ########.fr       */
+/*   Created: 2018/11/21 11:26:08 by lcutjack          #+#    #+#             */
+/*   Updated: 2018/11/30 16:21:50 by lcutjack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_replace(char *s, char ts, char on)
+size_t	ft_strlen(const char *s)
 {
-	while (*s)
-	{
-		if (*s == ts)
-			*s = on;
-		s++;
-	}
+	int	count;
+
+	count = 0;
+	while (s[count])
+		count++;
+	return (count);
 }
