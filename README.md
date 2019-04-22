@@ -11,4 +11,18 @@ We re-create these functions in order to deepen our understanding of C. The gene
 
 get_next_line is an individual project at 42 that basically reads a file line by line.
 
-Disclaimer: There are so many easier methods of doing this by using standard C functions. But the goal here is to be able to do it by using any functions from my libft and only the standard functions read, malloc and free.
+Disclaimer: There are so many easier methods of doing this by using standard C functions. But the goal here is to be able to do it by using any functions from my libft and only the standard functions ***read, malloc and free***.
+
+# ft_printf
+
+<h3>What is ft_printf?</h3>
+
+This project is a copy of the original printf function of C langage.
+
+This project supports all these converters, flags and modifiers:
+
+**Converts:** %d / %s / %p / %D / %i / %o / %O / %u / %U / %x / %X / %c / %%
+
+**Flags:** # / 0 / - / + / [space]
+
+**Modifiers:** hh / h / l / ll
