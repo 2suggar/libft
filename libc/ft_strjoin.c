@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	i;
 	unsigned int	j;
 
-	new = ft_strnew(sizeof(s1) + sizeof(s2));
+	new = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
 	if (!new || !s1 || !s2)
 		return (NULL);
 	i = 0;
